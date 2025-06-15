@@ -9,4 +9,9 @@ public class PatientController {
     public ResponseEntity getPatient(@RequestParam int id){
          return ResponseEntity.ok().body(null);
     }
+    @PosttMapping("/addPatient")
+    public ResponseEntity getPatient(@RequestBody Patient patient){
+        return ResponseEntity.ok().body(null);
+    }
+
 }
