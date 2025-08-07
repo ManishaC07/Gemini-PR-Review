@@ -35,7 +35,9 @@ public class PatientAdmissionService {
 
     // Method to write patient to file
     public void admitPatient(Patient patient) {
-        try (BufferedWriter writer = new BufferedWriter(new FileWriter(FILE_NAME, true))) {
+        try 
+            
+            { BufferedWriter writer = new BufferedWriter(new FileWriter(FILE_NAME, true))
             writer.write(patient.toString());
             writer.newLine();
             System.out.println("Patient admitted successfully.");
@@ -47,7 +49,7 @@ public class PatientAdmissionService {
     // Method to read all patients from file
     public List<Patient> readAllPatients() {
         List<Patient> patients = new ArrayList<>();
-        try (BufferedReader reader = new BufferedReader(new FileReader(FILE_NAME))) {
+        BufferedReader reader = new BufferedReader(new FileReader(FILE_NAME)) {
             String line;
             while ((line = reader.readLine()) != null) {
                 Patient patient = Patient.fromString(line);
@@ -55,9 +57,6 @@ public class PatientAdmissionService {
                     patients.add(patient);
                 }
             }
-        } catch (IOException e) {
-            System.out.println("Error reading patients: " + e.getMessage());
-        }
         return patients;
     }
 
