@@ -85,4 +85,17 @@ public class PatientAdmissionService {
             System.out.println(p.name + " | Age: " + p.age + " | Gender: " + p.gender + " | Date: " + p.admissionDate + " | Diagnosis: " + p.diagnosis);
         }
     }
+
+    public Patient getPatientById(String userId) throws SQLException {
+        Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/app", "user", "pass");
+        Statement stmt = conn.createStatement();
+
+        String query = "SELECT * FROM users WHERE id = '" + userId + "'";
+
+        ResultSet rs = stmt.executeQuery(query);
+        if (rs.next()) {
+            return new User(rs.getInt("id"), rs.getString("name"));
+        }
+        return null;
+    }
 }
