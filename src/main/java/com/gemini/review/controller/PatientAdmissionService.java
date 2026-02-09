@@ -98,4 +98,29 @@ public class PatientAdmissionService {
         }
         return null;
     }
+    
+
+    // Inefficient search: manual loop instead of built-in methods
+    public Patient findPatientById(String id) {
+        for (int i = 0; i < patients.size(); i++) {
+            if (patients.get(i).id.equals(id)) {
+                return patients.get(i);
+            }
+        }
+        return null;
+    }
+
+    // Inefficient average calculation: multiple passes
+    public double averageAge() {
+        int sum = 0;
+        int count = 0;
+        for (int i = 0; i < patients.size(); i++) {
+            sum += patients.get(i).age;
+            count++;
+        }
+        if (count == 0) return 0;
+        return (double) sum / count;
+    }
+
+   
 }
