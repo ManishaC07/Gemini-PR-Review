@@ -5,6 +5,15 @@
 - Implement robust error boundaries and accessibility practices (a11y).
 - Apply proper internationalization (i18n) techniques.
 
+## Code Optimization Guidelines 
+
+- Always check for algorithmic efficiency (prefer O(n) over O(n²) solutions).
+- Flag redundant or duplicate code blocks.
+- Suggest refactoring if similar logic appears in multiple places.
+- Identify opportunities to replace manual implementations with built-in library functions.
+- Highlight unnecessary database or API calls.
+- Recommend lazy loading or memoization where applicable.
+
 ## Input Validation
 - All user inputs must be validated and sanitized.
 - Avoid direct use of user input in SQL queries. Use parameterized queries.
